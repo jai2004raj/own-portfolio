@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, Github, Linkedin, Instagram, MessageCircle, Copy, Check, Sparkles, MessageSquare, MapPin, Loader2, AlertCircle, ExternalLink } from 'lucide-react';
+import { Mail, Send, Check, Sparkles, MessageSquare, Loader2, AlertCircle, ExternalLink } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
-  const [copiedEmail, setCopiedEmail] = useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(PERSONAL_INFO.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2500);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -94,155 +87,14 @@ export const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           
-          {/* Left Column: Direct Contact Info & Socials */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-5 space-y-6"
-          >
-            <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 space-y-6">
-              <h3 className="text-xl font-bold text-white font-heading">
-                Contact Information
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                Reach out directly via email or connect with me across professional developer platforms. Messages submitted here are routed straight to my primary inbox.
-              </p>
-
-              {/* Email Box with One-Click Copy */}
-              <div className="p-4 rounded-xl bg-dark-800/80 border border-white/[0.08] flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2 rounded-lg bg-brand-primary/20 text-brand-accent flex-shrink-0">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <span className="text-[10px] font-mono text-gray-400 block">Email Address</span>
-                    <a
-                      href={`mailto:${PERSONAL_INFO.email}`}
-                      className="text-xs sm:text-sm font-mono text-white hover:text-brand-accent transition-colors truncate block"
-                    >
-                      {PERSONAL_INFO.email}
-                    </a>
-                  </div>
-                </div>
-                <button
-                  onClick={handleCopyEmail}
-                  className="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 hover:text-white border border-white/10 transition-all flex-shrink-0"
-                  title="Copy email to clipboard"
-                  aria-label="Copy email"
-                >
-                  {copiedEmail ? (
-                    <Check className="w-4 h-4 text-emerald-400" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                </button>
-              </div>
-
-              {/* WhatsApp Box with Direct Chat Link */}
-              <a
-                href={PERSONAL_INFO.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-dark-800/80 border border-white/[0.08] hover:border-emerald-500/40 hover:bg-dark-800 transition-all flex items-center justify-between gap-3 group"
-              >
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <MessageCircle className="w-4 h-4" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <span className="text-[10px] font-mono text-gray-400 block">WhatsApp Direct Chat</span>
-                    <span className="text-xs sm:text-sm font-mono text-white group-hover:text-emerald-400 transition-colors truncate block">
-                      {PERSONAL_INFO.phone}
-                    </span>
-                  </div>
-                </div>
-                <span className="text-[11px] px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono flex items-center gap-1 group-hover:bg-emerald-500/20 transition-all flex-shrink-0">
-                  Message ↗
-                </span>
-              </a>
-
-              {/* Location */}
-              <div className="p-4 rounded-xl bg-dark-800/80 border border-white/[0.08] flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 flex-shrink-0">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-mono text-gray-400 block">Location</span>
-                  <span className="text-xs sm:text-sm text-gray-200">{PERSONAL_INFO.location}</span>
-                </div>
-              </div>
-
-              {/* Professional Links */}
-              <div className="pt-2 space-y-3">
-                <span className="text-xs font-mono text-gray-400 uppercase tracking-wider block">Profiles:</span>
-                <div className="flex flex-col gap-2">
-                  <a
-                    href={PERSONAL_INFO.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-dark-800/60 border border-white/[0.06] hover:border-brand-accent/40 text-xs sm:text-sm text-gray-300 hover:text-white transition-all group"
-                  >
-                    <span className="flex items-center gap-2.5">
-                      <Github className="w-4 h-4 text-brand-accent" />
-                      <span>github.com/jai2004raj</span>
-                    </span>
-                    <span className="text-xs text-gray-500 group-hover:text-white transition-colors">↗</span>
-                  </a>
-
-                  <a
-                    href={PERSONAL_INFO.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-dark-800/60 border border-white/[0.06] hover:border-brand-primary/40 text-xs sm:text-sm text-gray-300 hover:text-white transition-all group"
-                  >
-                    <span className="flex items-center gap-2.5">
-                      <Linkedin className="w-4 h-4 text-brand-primary" />
-                      <span>linkedin.com/in/jairaj-a-29554a343</span>
-                    </span>
-                    <span className="text-xs text-gray-500 group-hover:text-white transition-colors">↗</span>
-                  </a>
-
-                  <a
-                    href={PERSONAL_INFO.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-dark-800/60 border border-white/[0.06] hover:border-pink-500/40 text-xs sm:text-sm text-gray-300 hover:text-white transition-all group"
-                  >
-                    <span className="flex items-center gap-2.5">
-                      <Instagram className="w-4 h-4 text-pink-400" />
-                      <span>instagram.com/jairaj_4507</span>
-                    </span>
-                    <span className="text-xs text-gray-500 group-hover:text-white transition-colors">↗</span>
-                  </a>
-
-                  <a
-                    href={PERSONAL_INFO.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-dark-800/60 border border-white/[0.06] hover:border-emerald-500/40 text-xs sm:text-sm text-gray-300 hover:text-white transition-all group"
-                  >
-                    <span className="flex items-center gap-2.5">
-                      <MessageCircle className="w-4 h-4 text-emerald-400" />
-                      <span>WhatsApp (+91 9901864984)</span>
-                    </span>
-                    <span className="text-xs text-gray-500 group-hover:text-white transition-colors">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Interactive Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7"
+            className="w-full"
           >
             <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
               <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/[0.06]">
