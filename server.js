@@ -281,6 +281,17 @@ app.get('/api/messages', async (req, res) => {
   }
 });
 
+// POST /api/visit - Visitor tracking & email notification
+app.post('/api/visit', async (req, res) => {
+  try {
+    const visitHandler = (await import('./api/visit.js')).default;
+    return visitHandler(req, res);
+  } catch (err) {
+    console.error('Error invoking visit handler:', err);
+    res.status(200).json({ success: true, localMock: true });
+  }
+});
+
 // Fallback to index.html for single-page routing
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
