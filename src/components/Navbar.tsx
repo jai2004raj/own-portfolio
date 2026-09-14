@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Instagram, MessageCircle, FileText, Code } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Instagram, MessageCircle, Code } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavItem {
@@ -159,28 +159,10 @@ export const Navbar: React.FC = () => {
           >
             <MessageCircle className="w-4 h-4" />
           </a>
-          <a
-            href="assets/resume.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-semibold text-white transition-all shadow-sm"
-          >
-            <FileText className="w-3.5 h-3.5 text-brand-accent" />
-            <span>Resume</span>
-          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="flex sm:hidden items-center gap-2">
-          <a
-            href="assets/resume.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/10 text-xs text-white"
-          >
-            <FileText className="w-3 h-3 text-brand-accent" />
-            <span>Resume</span>
-          </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg bg-dark-800 border border-white/[0.08] text-gray-300 hover:text-white focus:outline-none"

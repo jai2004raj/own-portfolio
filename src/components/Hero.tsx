@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail, Github, Linkedin, Instagram, MessageCircle, Terminal, Sparkles, Database, Layers, Cpu, Copy, Check } from 'lucide-react';
+import { Mail, Terminal, Sparkles, Database, Layers, Cpu, Copy, Check } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 const CODE_SNIPPETS = {
@@ -102,69 +102,18 @@ export const Hero: React.FC = () => {
             {/* Call To Actions */}
             <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
               <a
-                href="#projects"
-                onClick={(e) => handleScrollTo(e, '#projects')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent text-white font-semibold text-sm shadow-lg shadow-brand-primary/25 hover:shadow-brand-primary/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
-              >
-                <span>View Projects</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, '#contact')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-dark-800/80 hover:bg-dark-700 border border-white/10 hover:border-white/20 text-gray-200 font-semibold text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent text-white font-semibold text-sm shadow-lg shadow-brand-primary/25 hover:shadow-brand-primary/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
-                <Mail className="w-4 h-4 text-brand-accent" />
+                <Mail className="w-4 h-4" />
                 <span>Contact Me</span>
               </a>
             </div>
 
-            {/* Social & Key Highlights Bar */}
+            {/* Key Highlights Bar */}
             <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-white/[0.06] w-full text-xs text-gray-400">
-              <div className="flex items-center gap-3">
-                <a
-                  href={PERSONAL_INFO.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-dark-800 border border-white/[0.08] text-gray-300 hover:text-white hover:border-brand-accent/40 hover:bg-dark-700 transition-all flex items-center gap-2"
-                  aria-label="GitHub Profile"
-                >
-                  <Github className="w-4 h-4" />
-                  <span className="font-mono">GitHub</span>
-                </a>
-                <a
-                  href={PERSONAL_INFO.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-dark-800 border border-white/[0.08] text-gray-300 hover:text-white hover:border-brand-primary/40 hover:bg-dark-700 transition-all flex items-center gap-2"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="w-4 h-4" />
-                  <span className="font-mono">LinkedIn</span>
-                </a>
-                <a
-                  href={PERSONAL_INFO.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-dark-800 border border-white/[0.08] text-gray-300 hover:text-white hover:border-pink-500/40 hover:bg-dark-700 transition-all flex items-center gap-2"
-                  aria-label="Instagram Profile"
-                >
-                  <Instagram className="w-4 h-4" />
-                  <span className="font-mono">Instagram</span>
-                </a>
-                <a
-                  href={PERSONAL_INFO.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-dark-800 border border-white/[0.08] text-gray-300 hover:text-white hover:border-emerald-500/40 hover:bg-dark-700 transition-all flex items-center gap-2"
-                  aria-label="WhatsApp Chat"
-                >
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
-                  <span className="font-mono">WhatsApp</span>
-                </a>
-              </div>
-
-              <div className="hidden sm:flex items-center gap-4 text-gray-500 font-mono text-[11px]">
+              <div className="flex flex-wrap items-center gap-4 text-gray-500 font-mono text-[11px]">
                 <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5 text-brand-accent" /> MERN Stack</span>
                 <span className="flex items-center gap-1.5"><Database className="w-3.5 h-3.5 text-brand-primary" /> MySQL / MongoDB</span>
                 <span className="flex items-center gap-1.5"><Cpu className="w-3.5 h-3.5 text-emerald-400" /> Embedded Systems</span>
