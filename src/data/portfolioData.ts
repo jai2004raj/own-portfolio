@@ -55,22 +55,58 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: "healthsync",
-    title: "HealthSync",
-    subtitle: "Health Tracking & Wellness Platform",
+    id: "aegis-shield",
+    title: "Aegis Shield",
+    subtitle: "Security Agency Management & Workforce Allocation Platform",
     category: "Full-Stack Project",
-    categoryBadge: "Full-Stack (MERN)",
-    description: "A comprehensive, responsive full-stack health tracking web platform designed for monitoring daily physical health, vital fitness metrics, and personalized wellness routines.",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Mongoose"],
+    categoryBadge: "Full-Stack (MERN / TypeScript)",
+    description: "A full-stack, enterprise-grade security agency operations and workforce allocation platform featuring multi-role authentication (Admin, Worker, Company, Customer), real-time attendance tracking, shift conflict detection, payroll calculation, and operational analytics.",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Recharts"],
     features: [
-      "Secure user authentication and protected session state",
-      "Dynamic BMI calculator & hydration/water intake logs",
-      "Comprehensive sleep, workout, and nutrition tracking modules",
-      "Automated medicine reminders and personalized health goal setting",
-      "Integrated health reports and analytics visualization"
+      "Multi-role JWT authentication & RBAC (Admin, Worker, Company, Customer)",
+      "Automated workforce allocation engine with shift conflict detection",
+      "Attendance monitoring with real-time duty check-in/out tracking",
+      "Monthly payroll calculator with allowances, overtime, and deductions",
+      "Admin analytics command center with Recharts visual telemetry and CSV exports"
     ],
-    githubUrl: "https://github.com/jai2004raj",
-    abstractVisualType: "healthsync",
+    githubUrl: "https://github.com/jai2004raj/Aegis-sheild",
+    abstractVisualType: "aegis",
+  },
+  {
+    id: "ai-detector",
+    title: "AI Detector for Admissions Essays",
+    subtitle: "Academic Admissions & Stylometric Prose Analysis Platform",
+    category: "Full-Stack Project",
+    categoryBadge: "AI & Full-Stack (MERN)",
+    description: "A full-stack MERN application for transparent, evidence-based detection of machine-generated text in college admissions essays using statistical language modeling, token surprisal, burstiness, and stylometric telemetry.",
+    technologies: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "Mongoose", "Tailwind CSS", "Statistical NLP"],
+    features: [
+      "Interactive proof heatmap with token surprisal, burstiness, and cross-entropy scoring",
+      "Explainable evidence inspector detailing sentence-level perplexity and AI clichés",
+      "Hybrid essay sensitivity detecting mixed human-written and machine-polished sections",
+      "Corpus stylometric telemetry: sentence length variance and type-token ratios",
+      "MongoDB persistence for analyzed manuscripts and reference benchmarks"
+    ],
+    githubUrl: "https://github.com/jai2004raj/AI-detector-for-admissions-essays",
+    abstractVisualType: "aidetector",
+  },
+  {
+    id: "flexfit-studio",
+    title: "FlexFit Studio",
+    subtitle: "Gym Management & Class Booking Platform",
+    category: "Full-Stack Project",
+    categoryBadge: "Full-Stack (Next.js / tRPC)",
+    description: "A full-stack gym management and fitness studio booking platform enabling members to manage memberships, book classes, use class credits, and join waitlists, while staff operate front-desk operations, manage trainers, and monitor studio revenue.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "tRPC", "Prisma", "SQLite"],
+    features: [
+      "Member profile and active membership lifecycle management",
+      "Dynamic fitness class scheduling with capacity limits & waitlists",
+      "Credit-based booking system supporting corporate employee pools",
+      "Multi-role access control for Studio Admins, Trainers, and Members",
+      "Operational analytics tracking revenue, bookings, and gym attendance"
+    ],
+    githubUrl: "https://github.com/jai2004raj/flexfit-studio",
+    abstractVisualType: "flexfit",
   },
   {
     id: "jumpman",
@@ -78,7 +114,7 @@ export const PROJECTS: ProjectItem[] = [
     subtitle: "Real-Time Embedded Obstacle Avoidance Game",
     category: "Arduino Project",
     categoryBadge: "Arduino Embedded",
-    description: "An interactive retro JumpMan game engineered on the Arduino Uno R3 platform, featuring smooth real-time obstacle avoidance gameplay rendered on a 16x2 character LCD.",
+    description: "An interactive retro JumpMan game engineered on the Arduino Uno R3 platform, featuring smooth real-time obstacle avoidance gameplay rendered on a 16x2 character LCD via I2C protocol.",
     technologies: ["Arduino Uno R3", "16×2 LCD Display", "I2C LCD Module", "Push Button Switch", "Embedded C", "Arduino IDE"],
     features: [
       "Responsive push-button jump controls with hardware debouncing",
@@ -90,56 +126,21 @@ export const PROJECTS: ProjectItem[] = [
     abstractVisualType: "jumpman",
   },
   {
-    id: "food-management",
-    title: "Food Management System",
-    subtitle: "Inventory & Order Control System",
-    category: "Full-Stack Project",
-    categoryBadge: "Full-Stack (MERN)",
-    description: "A responsive full-stack food management platform designed for streamlining food item inventory, tracking incoming/outgoing orders, stock monitoring, and operational availability.",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Mongoose"],
-    features: [
-      "Role-based secure authentication & user management",
-      "Live food item tracking with stock level threshold monitoring",
-      "Real-time order processing and status pipeline",
-      "Food availability reporting and consumption logs",
-      "Structured REST API backend with MongoDB aggregation queries"
-    ],
-    githubUrl: "https://github.com/jai2004raj",
-    abstractVisualType: "foodmgmt",
-  },
-  {
     id: "eduportal-ai",
     title: "EduPortal AI Chatbot",
     subtitle: "Educational AI Assistant",
     category: "Front-End Project",
     categoryBadge: "Front-End & AI",
-    description: "A responsive front-end AI assistant designed for an academic portal to provide instant, real-time learning support, subject clarification, and interactive query resolution.",
-    technologies: ["HTML", "CSS", "JavaScript"],
+    description: "An interactive AI learning assistant designed for academic portals to deliver real-time learning support, subject clarification, algorithmic explanations, and student query resolution.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive UI", "REST API"],
     features: [
-      "Interactive conversational chat interface with smooth typing stream",
-      "Real-time educational query answering and problem assistance",
-      "Subject-tailored knowledge responses for students",
+      "Interactive conversational chat interface with streaming response animations",
+      "Real-time educational query answering and algorithmic problem assistance",
+      "Subject-tailored knowledge responses for students and academic curricula",
       "Adaptive responsive design optimized for mobile and desktop screens"
     ],
     githubUrl: "https://github.com/jai2004raj/Eduportal-AI-Chatbot",
     abstractVisualType: "eduportal",
-  },
-  {
-    id: "calculator",
-    title: "Simple Scientific Calculator",
-    subtitle: "Web Computation Utility",
-    category: "Front-End Project",
-    categoryBadge: "Front-End",
-    description: "A responsive web-based scientific calculator for performing standard arithmetic operations and complex mathematical/trigonometric computations with precise state management.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    features: [
-      "Standard arithmetic and scientific operation support",
-      "Instant computation memory with clear/reset functions",
-      "Clean tactile keyboard layout and responsive visual display",
-      "Error handling for division by zero and invalid expressions"
-    ],
-    githubUrl: "https://github.com/jai2004raj",
-    abstractVisualType: "calculator",
   }
 ];
 

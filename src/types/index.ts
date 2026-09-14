@@ -2,14 +2,14 @@ export interface ProjectItem {
   id: string;
   title: string;
   subtitle?: string;
-  category: 'Full-Stack Project' | 'Arduino Project' | 'Front-End Project';
+  category: 'Full-Stack Project' | 'Arduino Project' | 'Front-End Project' | string;
   categoryBadge: string;
   description: string;
   technologies: string[];
   features: string[];
   githubUrl?: string;
   liveDemoUrl?: string;
-  abstractVisualType: 'healthsync' | 'jumpman' | 'foodmgmt' | 'eduportal' | 'calculator';
+  abstractVisualType: 'aegis' | 'aidetector' | 'flexfit' | 'eduportal' | 'jumpman' | 'calculator' | 'healthsync' | 'foodmgmt';
 }
 
 export interface SkillCategory {

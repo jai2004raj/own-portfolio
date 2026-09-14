@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Activity, Sparkles, Layers, Cpu, Utensils, MessageSquare, Calculator } from 'lucide-react';
+import { Github, ExternalLink, Activity, Sparkles, Layers, Cpu, Utensils, MessageSquare, Calculator, ShieldCheck, FileSearch, Dumbbell } from 'lucide-react';
 import { ProjectItem } from '../types';
 
 interface ProjectCardProps {
@@ -12,6 +12,140 @@ interface ProjectCardProps {
 // Abstract UI Preview Visuals
 const renderAbstractVisual = (type: ProjectItem['abstractVisualType']) => {
   switch (type) {
+    case 'aegis':
+      return (
+        <div className="h-44 sm:h-52 w-full bg-gradient-to-br from-dark-800 via-[#0a1224] to-[#0c1836] p-4 flex flex-col justify-between relative overflow-hidden border-b border-blue-500/20 select-none">
+          <div className="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-blue-500/15 blur-2xl" />
+          <div className="absolute -left-8 -bottom-8 w-36 h-36 rounded-full bg-indigo-500/15 blur-2xl" />
+
+          {/* Top Bar with Security Badge */}
+          <div className="flex items-center justify-between z-10">
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 rounded-lg bg-blue-500/20 border border-blue-500/30">
+                <ShieldCheck className="w-4 h-4 text-blue-400" />
+              </div>
+              <span className="text-xs font-mono font-bold text-white tracking-wide">Aegis Command Console</span>
+            </div>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> 100% Guard Coverage
+            </span>
+          </div>
+
+          {/* Telemetry Metrics */}
+          <div className="grid grid-cols-3 gap-2.5 z-10">
+            <div className="p-2.5 rounded-xl bg-dark-800/80 border border-white/[0.06] flex flex-col">
+              <span className="text-[10px] text-gray-400 font-mono">Active Guards</span>
+              <span className="text-sm font-bold text-blue-400 font-heading">48 Deployed</span>
+              <div className="w-full bg-dark-700 h-1 rounded-full mt-1.5 overflow-hidden">
+                <div className="bg-blue-400 h-full w-[88%]" />
+              </div>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-dark-800/80 border border-white/[0.06] flex flex-col">
+              <span className="text-[10px] text-gray-400 font-mono">Shift Coverage</span>
+              <span className="text-sm font-bold text-emerald-400 font-heading">98.2%</span>
+              <div className="w-full bg-dark-700 h-1 rounded-full mt-1.5 overflow-hidden">
+                <div className="bg-emerald-400 h-full w-[98%]" />
+              </div>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-dark-800/80 border border-white/[0.06] flex flex-col">
+              <span className="text-[10px] text-gray-400 font-mono">Client Orgs</span>
+              <span className="text-sm font-bold text-amber-400 font-heading">12 Active</span>
+              <div className="w-full bg-dark-700 h-1 rounded-full mt-1.5 overflow-hidden">
+                <div className="bg-amber-400 h-full w-[75%]" />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom RBAC status pill */}
+          <div className="z-10 bg-dark-800/60 backdrop-blur-md rounded-lg px-3 py-1.5 border border-white/[0.04] flex items-center justify-between text-[11px] text-gray-300">
+            <span className="flex items-center gap-1.5 font-mono text-[10px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400" /> RBAC: ADMIN • WORKER • COMPANY
+            </span>
+            <span className="font-mono text-emerald-400 text-[10px]">Zero Shift Conflicts</span>
+          </div>
+        </div>
+      );
+
+    case 'aidetector':
+      return (
+        <div className="h-44 sm:h-52 w-full bg-gradient-to-br from-dark-800 via-[#15102a] to-[#1e1338] p-4 flex flex-col justify-between relative overflow-hidden border-b border-purple-500/20 select-none">
+          <div className="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-purple-500/15 blur-2xl" />
+          <div className="absolute -left-8 -bottom-8 w-36 h-36 rounded-full bg-pink-500/15 blur-2xl" />
+
+          {/* Top Bar */}
+          <div className="flex items-center justify-between z-10">
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 rounded-lg bg-purple-500/20 border border-purple-500/30">
+                <FileSearch className="w-4 h-4 text-purple-400" />
+              </div>
+              <span className="text-xs font-mono font-bold text-white tracking-wide">Essay Stylometrics Telemetry</span>
+            </div>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+              Statistical NLP
+            </span>
+          </div>
+
+          {/* Manuscript Analysis Snippet with heat highlighting */}
+          <div className="z-10 bg-dark-900/80 p-2.5 rounded-lg border border-purple-500/20 font-serif text-xs space-y-1.5">
+            <div className="flex justify-between items-center text-[10px] font-mono text-gray-400">
+              <span>PROSE ANALYSIS: 1,420 WORDS</span>
+              <span className="text-emerald-400 font-bold">HUMAN CADENCE: 88%</span>
+            </div>
+            <p className="text-[11px] text-gray-300 leading-snug">
+              "My journey into distributed architectures began <span className="bg-purple-500/20 text-purple-200 px-1 rounded border-b border-purple-400">with late-night debugging of concurrency races</span>..."
+            </p>
+          </div>
+
+          {/* Bottom Telemetry Metrics */}
+          <div className="z-10 flex items-center justify-between text-[10px] font-mono text-gray-400 bg-dark-800/60 px-2.5 py-1 rounded">
+            <span>BURSTINESS: 4.82 σ</span>
+            <span>PERPLEXITY: 72.4</span>
+            <span className="text-purple-300">CLICHÉ MARKERS: 0%</span>
+          </div>
+        </div>
+      );
+
+    case 'flexfit':
+      return (
+        <div className="h-44 sm:h-52 w-full bg-gradient-to-br from-dark-800 via-[#1a120b] to-[#261b0c] p-4 flex flex-col justify-between relative overflow-hidden border-b border-amber-500/20 select-none">
+          <div className="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-amber-500/15 blur-2xl" />
+          <div className="absolute -left-8 -bottom-8 w-36 h-36 rounded-full bg-orange-500/15 blur-2xl" />
+
+          {/* Top Bar */}
+          <div className="flex items-center justify-between z-10">
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 rounded-lg bg-amber-500/20 border border-amber-500/30">
+                <Dumbbell className="w-4 h-4 text-amber-400" />
+              </div>
+              <span className="text-xs font-mono font-bold text-white tracking-wide">FlexFit Studio Ops</span>
+            </div>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
+              Next.js + tRPC
+            </span>
+          </div>
+
+          {/* Class Booking & Credit Cards */}
+          <div className="space-y-2 z-10">
+            <div className="p-2 rounded-lg bg-dark-800/80 border border-white/[0.06] flex items-center justify-between text-xs">
+              <span className="text-gray-300 font-medium">HIIT Conditioning (07:00 AM)</span>
+              <span className="text-emerald-400 font-mono text-[11px] font-bold">18/20 Booked (Waitlist: 2)</span>
+            </div>
+            <div className="p-2 rounded-lg bg-dark-800/80 border border-white/[0.06] flex items-center justify-between text-xs">
+              <span className="text-gray-300 font-medium">Corporate Pool Credits</span>
+              <span className="text-amber-400 font-mono text-[11px] font-bold">140 Remaining</span>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="z-10 flex items-center justify-between text-[10px] font-mono text-gray-400 bg-dark-800/60 px-2.5 py-1 rounded">
+            <span>TRAINER SCHEDULING ACTIVE</span>
+            <span className="text-amber-400">● LIVE CAPACITY</span>
+          </div>
+        </div>
+      );
+
     case 'healthsync':
       return (
         <div className="h-44 sm:h-52 w-full bg-gradient-to-br from-dark-800 via-dark-900 to-[#0d1527] p-4 flex flex-col justify-between relative overflow-hidden border-b border-white/[0.08] select-none">

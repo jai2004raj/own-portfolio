@@ -9,7 +9,7 @@ export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
-  const categories = ['All', 'Full-Stack Project', 'Arduino Project', 'Front-End Project'];
+  const categories = ['All', ...Array.from(new Set(PROJECTS.map(p => p.category)))];
 
   const filteredProjects = activeFilter === 'All'
     ? PROJECTS
